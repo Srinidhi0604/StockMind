@@ -33,11 +33,11 @@
       <nav class="auth-section">
         {% if session.get('username') %}
         <span class="welcome-msg">Welcome, {{ session.get('username') }}!</span>
-        <a class="header-btn logout-btn" href="{{url_for('logout')}}">
+        <a class="header-btn logout-btn" href="{{url_for('auth.logout')}}">
           Logout
         </a>
         {% else %}
-        <a class="header-btn login-btn" href="{{url_for('analyze_company')}}"> Login
+        <a class="header-btn login-btn" href="{{url_for('auth.accessAccount')}}"> Login
         </a>
         {% endif %}
       </nav>
@@ -165,7 +165,7 @@
 
       try {
         const apiUrl = window.location.origin;
-        const response = await fetch(`${apiUrl}/analyze_company?company_name=${encodeURIComponent(companyName)}`);
+        const response = await fetch(`${apiUrl}/service/analyze_company?company_name=${encodeURIComponent(companyName)}`);
         const data = await response.json();
 
         if (data.success) {
