@@ -1,35 +1,23 @@
 # Pull Request
-Authentication System Implementation
+News Sentiment Analysis Feature Implementation
 
 ## 📝 Description
 
-This PR implements a secure authentication system for StockMind AI, including:
+This PR implements a comprehensive news sentiment analysis feature for StockMind AI, including:
 
-User registration with validation
-
-Login/logout functionality
-
-Session management
-
-Password security
-
-Error handling and user feedback
+- Real-time news fetching from NewsAPI
+- Sentiment analysis using VADER (Valence Aware Dictionary and sEntiment Reasoner)
+- Visual sentiment indicators with emojis
+- News summary generation
+- Integration with existing company analysis
 
 # Key Features Implemented:
-Complete registration flow with username, email, and password
-
-Secure login system with session management
-
-Client-side and server-side form validation
-
-Password hashing using Werkzeug
-
-Flash messages for user feedback
-
-Responsive authentication forms matching application style
-
-Protected routes using Flask-Login decorators
-
+- News fetching for specific companies using NewsAPI
+- Accurate sentiment analysis using VADER
+- Sentiment visualization with emojis and labels
+- News summary generation
+- Responsive news section in the UI
+- Error handling and fallback mechanisms
 
 ---
 
@@ -39,43 +27,50 @@ Protected routes using Flask-Login decorators
 - [✅] I have followed the coding standards and code quality.
 - [✅] I have tested my changes locally.
 - [✅] I have added necessary documentation/comments where needed.
-
+- [✅] I have updated requirements.txt with new dependencies.
+- [✅] I have ensured proper error handling and fallbacks.
 
 ---
 
 ## 📎 Related Issues
 
-Closes #1 (Implement User Authentication System)
+Closes #X (Implement News Sentiment Analysis Feature)
 
 ---
 
 ## 📸 Screenshots (if applicable)
 
-Home Page with login button feature.
+News Section with Sentiment Analysis
+![News Section](path_to_screenshot.png)
 
-![image alt](https://github.com/Stunner2201/StockMind/blob/3e797b87c17cdcb20df9d9bebfedb8781691119d/Screenshot%202025-05-11%20140814.png)
-
-
-
-LoginPage
-![image alt](https://github.com/Stunner2201/StockMind/blob/9bbd1d41f7ae7471fcacbae1c7bd957f8ff1d70e/Screenshot%202025-05-11%20141451.png)
-
-
-
-RegisterPage
-![image alt](https://github.com/Stunner2201/StockMind/blob/70bb51c9a986c04b6048a8aa6f4971d964e818dd/Screenshot%202025-05-11%20141713.png)
 ---
 
 ## 💬 Additional Notes
 
-Implemented both client-side (JavaScript) and server-side (Python) validation
+- Implemented VADER sentiment analysis for accurate news sentiment detection
+- Added proper error handling for API failures
+- Ensured mobile responsiveness of the news section
+- Optimized news relevance by using exact company name matching
+- Added sentiment thresholds based on VADER's recommended values
+- Integrated with existing company analysis workflow
 
-Used Flask-Login for session management
+## 🔧 Technical Details
 
-Password security ensured with Werkzeug's hashing
+### Dependencies Added:
+- vaderSentiment==3.3.2
+- newsapi-python==0.2.7
 
-All forms are mobile-responsive
+### Files Modified:
+- `news_sentiment.py`: Implemented NewsSentimentAnalyzer class
+- `backend.py`: Added news sentiment integration
+- `templates/FRONT.html`: Added news section UI
+- `requirements.txt`: Updated dependencies
 
-Error messages are user-friendly and actionable
+### API Integration:
+- NewsAPI for fetching company news
+- VADER for sentiment analysis
 
-Added proper redirects for authenticated/unauthenticated users
+### Performance Considerations:
+- Caching implemented for news results
+- Optimized API calls to minimize rate limiting
+- Efficient sentiment analysis processing
