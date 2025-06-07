@@ -216,7 +216,13 @@
 
       try {
         const apiUrl = window.location.origin;
-        const response = await fetch(`${apiUrl}/service/analyze_company?company_name=${encodeURIComponent(companyName)}`);
+        const response = await fetch(`${apiUrl}/service/analyze_company`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ company_name: companyName })
+        });
         
         // Check if the response is JSON before parsing
         const contentType = response.headers.get("content-type");
